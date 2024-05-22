@@ -1,0 +1,3 @@
+What Actually Happends in Drum Kit   ?
+
+When you click any of the drum then you got Message that "the button get Click."

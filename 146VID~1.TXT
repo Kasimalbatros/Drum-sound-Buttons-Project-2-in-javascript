@@ -1,0 +1,108 @@
+146. video  Udemy Adding Animations To our Drum website final project  (At Last)  ?
+
+Ans:- we Maily use
+
+buttonAnimation(buttonInnerHTML);//for mouse
+
+buttonAnimation(event.key);//for Keyboard
+
+Using SetTimeout functions--->
+
+function buttonAnimation(currentKey) {
+    // Select the button element that matches the current key
+    var activeButton = document.querySelector("." + currentKey);
+
+    // Check if the button exists
+    if (activeButton) {
+        // Add the 'pressed' class to the button
+        activeButton.classList.add("pressed");
+
+        // Remove the 'pressed' class after 100 milliseconds
+        setTimeout(function() {
+            activeButton.classList.remove("pressed");
+        }, 100);
+    }
+}
+
+example:- The . (dot) is used in CSS to select classes. So if currentKey is "w", this will look for an element with the class ".w".
+activeButton will be a reference to the DOM element that matches the class currentKey, or null if no such element exists.
+
+
+
+
+
+
+
+
+
+code:-
+
+
+//detecting mouse press
+var zxc=document.querySelectorAll(".drum").length;
+for(var i=0;i<zxc;i++){
+document.querySelectorAll(".drum")[i].addEventListener("click",function(){
+    var buttonInnerHTML=this.innerHTML;
+    makeSound(buttonInnerHTML);  // see for mouse makeSound(buttonInnerHTML);
+    buttonAnimation(buttonInnerHTML);
+    // for keyboard makeSound(key)
+ 
+});
+}
+//detecting keyboard press.
+document.addEventListener("keypress",function(event){
+makeSound(event.key);  // event.key means whenever any key pressed then passed to key
+buttonAnimation(event.key);
+});
+
+function makeSound(key){
+    switch(key){
+        case "w":
+            var audio = new Audio("sounds/tom-1.mp3");  //---> remember Arrow "/" dont use "\"
+            audio.play();
+        break;
+    
+        case "a":
+            var audio = new Audio("sounds/tom-2.mp3");  //---> remember Arrow "/" dont use "\"
+            audio.play();
+        break;
+    
+        case "s":
+            var audio = new Audio("sounds/tom-3.mp3");  //---> remember Arrow "/" dont use "\"
+            audio.play();
+        break;
+    
+        case "d":
+            var audio = new Audio("sounds/tom-4.mp3");  //---> remember Arrow "/" dont use "\"
+            audio.play();
+        break;
+    
+        case "j":
+            var audio = new Audio("sounds/snare.mp3");  //---> remember Arrow "/" dont use "\"
+            audio.play();
+        break;
+    
+        case "k":
+            var audio = new Audio("sounds/kick-bass.mp3");  //---> remember Arrow "/" dont use "\"
+            audio.play();
+        break;
+    
+        case "l":
+            var audio = new Audio("sounds/crash.mp3");  //---> remember Arrow "/" dont use "\"
+            audio.play();
+        break;
+    
+    
+            default:
+      }
+}
+
+function buttonAnimation(currentKey){
+var activeButton=document.querySelector("."+currentKey);//.w or .a or etc
+activeButton.classList.add("pressed");
+setTimeout(function (){
+    activeButton.classList.remove("pressed");
+},100);
+}
+
+

@@ -1,0 +1,8 @@
+Clicked on Button It Gies you response  ? (Add EventListerner )
+
+Code...
+
+document.querySelector(".button").addEventListener("click",a);
+function a(){
+    alert("I got Clicked!");
+}

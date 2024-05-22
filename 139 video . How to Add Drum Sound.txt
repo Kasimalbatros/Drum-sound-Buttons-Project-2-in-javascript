@@ -1,0 +1,10 @@
+How to Add Drum Sound ?
+
+
+var zxc=document.querySelectorAll(".drum").length;
+for(var i=0;i<zxc;i++){
+document.querySelectorAll(".drum")[i].addEventListener("click",function(){
+    var audio = new Audio("sounds/tom-1.mp3");  //---> remember Arrow "/" dont use "\"
+    audio.play();
+});
+}
